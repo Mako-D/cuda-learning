@@ -54,7 +54,7 @@ int main() {
 
 	cAbs KERNEL_ARGS2(blocks, BS) (c_d, a_d, N);
 
-	cudaMemcpy(a.data(), a_d, N * sizeof(float), cudaMemcpyDeviceToHost);
+	cudaMemcpy(a.data(), a_d, N * sizeof(double), cudaMemcpyDeviceToHost);
 	auto sumR = accumulate(a.begin(), a.end(), 0.);
 	for (int i = 0; i < N; i++) {
 		std::cout << r[i] << " : " << a[i] << "\n";
